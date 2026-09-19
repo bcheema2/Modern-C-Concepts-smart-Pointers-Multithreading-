@@ -1,0 +1,18 @@
+# IDE / Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build directories and outputs
+build/
+cmake-build-*/
+bin/
+lib/
+*.o
+*.a
+*.so
+*.dylib
+
+# System files
+.DS_Store
