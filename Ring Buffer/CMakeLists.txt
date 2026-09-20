@@ -3,6 +3,16 @@ project(Ring_Buffer)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Ring_Buffer main.cpp
-        include/concepts.hpp
-        include/buffer.hpp)
+find_package(Threads REQUIRED)
+
+include_directories(include)
+
+add_executable(Ring_Buffer
+        main.cpp
+)
+target_link_libraries(Ring_Buffer PRIVATE Threads::Threads)
+
+add_executable(RingBufferBenchmark
+        benchmark.cpp
+)
+target_link_libraries(RingBufferBenchmark PRIVATE Threads::Threads)
